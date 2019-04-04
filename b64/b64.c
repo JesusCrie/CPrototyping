@@ -71,7 +71,7 @@ static void decode_full_block(const char *data, char *out) {
     out[2] = block & 0x0000ff;
 }
 
-static char *decode_potentially_partial_block(const char *data, char *out) {
+static void decode_potentially_partial_block(const char *data, char *out) {
     uint32_t block = decode_char(data[0]) << 18
                      | decode_char(data[1]) << 12;
 
@@ -87,8 +87,6 @@ static char *decode_potentially_partial_block(const char *data, char *out) {
         block |= decode_char(data[3]);
         out[2] = block & 0x0000ff;
     }
-
-    return out;
 }
 
 static char *encode_sequence(const char *data) {

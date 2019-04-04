@@ -1,4 +1,4 @@
-b64/b64.bin
+*.bin
 
 cmake-build-debug
 CMakeLists.txt
